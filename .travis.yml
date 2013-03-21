@@ -1,0 +1,8 @@
+bundler_args: --without development
+script: "bundle exec rake db:drop db:setup spec"
+rvm:
+  - 1.9.2
+gemfile:
+  - Gemfile
+env:
+  - DB=postgresql
