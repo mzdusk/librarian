@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spork-rails'
   gem 'factory_girl_rails'
+  gem 'coveralls', :require => false
 end
 
 group :development do
