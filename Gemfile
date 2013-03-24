@@ -40,6 +40,7 @@ gem 'unicorn'
 group :development, :test do
   gem 'rspec-rails'
   gem 'spork-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -47,6 +48,5 @@ group :development do
   gem 'guard-spork'
   gem 'guard-rspec'
   gem 'rb-inotify'
-  gem 'factory_girl_rails'
   gem 'better_errors'
 end
