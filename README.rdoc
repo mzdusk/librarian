@@ -1,6 +1,8 @@
 = Librarian
 
 {<img src="https://travis-ci.org/mzdusk/librarian.png" />}[https://travis-ci.org/mzdusk/librarian]
+{<img src="https://gemnasium.com/mzdusk/librarian.png" alt="Dependency Status" />}[https://gemnasium.com/mzdusk/librarian]
+{<img src="https://codeclimate.com/github/mzdusk/librarian.png" />}[https://codeclimate.com/github/mzdusk/librarian]
 
 Librarian は音楽団体向け Web アプリケーションです。
 演奏会情報や練習日程、楽譜の管理等を行います。
