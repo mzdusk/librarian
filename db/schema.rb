@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321131328) do
+ActiveRecord::Schema.define(:version => 20130325130656) do
 
   create_table "rehearsals", :force => true do |t|
     t.text     "content"
@@ -19,5 +19,18 @@ ActiveRecord::Schema.define(:version => 20130321131328) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "scores", :force => true do |t|
+    t.string   "name"
+    t.binary   "data"
+    t.string   "content_type"
+    t.integer  "size"
+    t.integer  "piece_id"
+    t.integer  "lock_version", :default => 0, :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
+
+  add_index "scores", ["piece_id"], :name => "index_scores_on_piece_id"
 
 end
