@@ -39,6 +39,8 @@ gem 'unicorn'
 # To use debugger
 # gem 'debugger'
 
+gem 'kaminari'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'spork-rails'
