@@ -34,7 +34,8 @@ ActiveRecord::Schema.define(:version => 20130327141950) do
 
   create_table "rehearsals", :force => true do |t|
     t.text     "content"
-    t.date     "date"
+    t.datetime "date"
+    t.string   "place"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
