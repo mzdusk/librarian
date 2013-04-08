@@ -16,7 +16,7 @@ describe RehearsalsController do
         create_list :past_rehearsal, 2
       end
 
-      it "@rehearsals has no past rehearsals" do
+      it "assigns @rehearsals with no past rehearsals" do
         expect(assigns(:rehearsals)).to be_all { |rehearsal| rehearsal.date > Time.now }
       end
     end
@@ -31,7 +31,7 @@ describe RehearsalsController do
           get :index, :page => 1
         end
 
-        it "@rehearsal has 10 rehearsals" do
+        it "assigns @rehearsals with 10 rehearsals" do
           expect(assigns(:rehearsals)).to have(10).items
         end
       end
@@ -41,10 +41,24 @@ describe RehearsalsController do
           get :index, :page => 2
         end
 
-        it "@rehearsal has 5 rehearsals" do
+        it "assigns @rehearsals with 5 rehearsals" do
           expect(assigns(:rehearsals)).to have(5).items
         end
       end
+    end
+  end
+
+  describe "GET create" do
+    before do
+      get :new
+    end
+
+    it "assigns @rehearsal" do
+      expect(assigns(:rehearsal)).not_to be_nil
+    end
+
+    it "assigns @rehearsal with new recoard" do
+      expect(assigns(:rehearsal)).to be_new_record
     end
   end
 end
