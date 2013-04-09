@@ -10,4 +10,9 @@ describe "routes for Rehearsals" do
     expect({ :get => "/rehearsals/new" }).to route_to(:controller => "rehearsals",
                                                       :action => "new")
   end
+
+  it "routes /rehearsals to the create action" do
+    expect({ :post => "/rehearsals" }).to route_to(:controller => "rehearsals",
+                                                   :action => "create")
+  end
 end

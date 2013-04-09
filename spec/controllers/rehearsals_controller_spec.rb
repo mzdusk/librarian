@@ -48,7 +48,7 @@ describe RehearsalsController do
     end
   end
 
-  describe "GET create" do
+  describe "GET new" do
     before do
       get :new
     end
@@ -59,6 +59,50 @@ describe RehearsalsController do
 
     it "assigns @rehearsal with new recoard" do
       expect(assigns(:rehearsal)).to be_new_record
+    end
+  end
+
+  describe "POST create" do
+    context "when valid parameter specified" do
+      let(:params) do
+        { :rehearsal => { :content => "My Text",
+            'date(1i)' => 2013,
+            'date(2i)' => 5,
+            'date(3i)' => 6,
+            'date(4i)' => 18,
+            'date(5i)' => 30,
+            :place => "Somewhere" } }
+      end
+
+      it "creates new rehearsal" do
+        expect { post(:create, params) }.to change{ Rehearsal.count }.by(1)
+      end
+
+      it "redirects to index action" do
+        post :create, params
+        expect(response).to redirect_to(:action => :index)
+      end
+    end
+
+    context "when invalid parameter specified" do
+      let(:params) do
+        { :rehearsal => { :content => "",
+            'date(1i)' => 2013,
+            'date(2i)' => 5,
+            'date(3i)' => 6,
+            'date(4i)' => 18,
+            'date(5i)' => 30,
+            :place => "Somewhere" } }
+      end
+
+      it "does not create new rehearsal" do
+        expect { post(:create, params) }.not_to change { Rehearsal.count }
+      end
+
+      it "renders new template" do
+        post :create, params
+        expect(response).to render_template(:new)
+      end
     end
   end
 end
