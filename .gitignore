@@ -17,3 +17,6 @@
 *~
 
 /coverage
+
+/vendor/bin
+/vendor/bundler
